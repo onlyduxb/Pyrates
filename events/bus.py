@@ -31,7 +31,7 @@ class EventBus:
         else:
             self._subscriptions[event] = []
 
-    def subscribe_handler[T: AnyEvent](
+    def subscribe[T: AnyEvent](
         self, event_type: type[T], handler: Handler[T]
     ) -> None:
         if event_type not in self._subscriptions:
@@ -45,7 +45,7 @@ class EventBus:
 
     def on[T: AnyEvent](self, event_type: type[T]):
         def decorator(handler: Handler[T]):
-            self.subscribe_handler(event_type, handler)
+            self.subscribe(event_type, handler)
             return handler
 
         return decorator
