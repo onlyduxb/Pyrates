@@ -1,5 +1,3 @@
-# ruff: noqa
-
 from .bus import EventBus, AnyEvent
 from typing import Callable, Any
 

@@ -1,5 +1,3 @@
-# ruff: noqa
-
 from .event import Event
 from typing import Any, Callable, cast
 
